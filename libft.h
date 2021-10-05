@@ -6,7 +6,7 @@
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:45:38 by lykalon           #+#    #+#             */
-/*   Updated: 2021/10/05 18:58:43 by lykalon          ###   ########.fr       */
+/*   Updated: 2021/10/05 21:23:08 by lykalon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,9 @@ int		ft_toupper(int ch);
 char	*ft_strchr(const char *str, int ch);
 char	*ft_strrchr(const char *str, int ch);
 int		ft_strncmp(const char *s1, const char *s2, size_t count);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *str1, const void *str2, size_t count);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+int		ft_atoi(const char *str);
 
 #endif

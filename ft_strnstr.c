@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 17:25:33 by lykalon           #+#    #+#             */
-/*   Updated: 2021/10/05 21:36:14 by lykalon          ###   ########.fr       */
+/*   Created: 2021/10/05 20:09:08 by lykalon           #+#    #+#             */
+/*   Updated: 2021/10/05 21:22:15 by lykalon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size_dst)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
+	size_t	len_h;
+	size_t	len_n;
 	int		i;
-	int		j;
-	size_t	len_d;
+	char	*res;
 
+	if (ft_strlen(haystack) < ft_strlen(needle))
+		return (0);
+	if (ft_strlen(needle) == 0)
+		return ((char *)haystack);
 	i = 0;
-	j = 0;
-	len_d = ft_strlen(dst);
-	if (len_d < (size_dst - 1) && (size_dst > 0)
+	len_h = ft_strlen(haystack);
+	len_n = ft_strlen(needle);
+	res = 0;
+	while (len_h - len_n - i)
 	{
-		while (dst[i])
-		{
-			size_dst--;
+		if (ft_strncmp(&haystack[i], &needle[i], len_n) == 0)
+			res = (char *)haystack + i;
+		else
 			i++;
-		}
-		while ((src[j]) && size_dst > 1)
-		{
-			dst[i] = src[j];
-			i++;
-			j++;
-			size_dst--;
-		}
-		dst[i] = '\0';
 	}
-	return (len_d + ft_strlen(src));
+	return (res);
 }

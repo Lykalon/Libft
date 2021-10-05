@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 19:20:03 by lykalon           #+#    #+#             */
-/*   Updated: 2021/10/05 19:41:00 by lykalon          ###   ########.fr       */
+/*   Created: 2021/10/05 19:55:50 by lykalon           #+#    #+#             */
+/*   Updated: 2021/10/05 20:00:42 by lykalon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, size_t count)
 {
-	int				i;
-	char			*res;
-	unsigned char	founded;
+	int			result;
+	const char	*s1;
+	const char	*s2;
 
-	founded = (unsigned char)c;
-	i = 0;
-	res = (char *)s;
-	while ((n > 0) && *res)
-	{
-		if (*res == founded)
-			return ((void *)res);
-		res++;
-		n--;
-	}
-	return (0);
+	s1 = (const char *)str1;
+	s2 = (const char *)str2;
+	result = ft_strncmp(str1, str2, count);
+	return (result);
 }

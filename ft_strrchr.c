@@ -14,10 +14,15 @@ char	*ft_strrchr(const char *str, int ch)
 {
 	const char	*res;
 	char		*founded;
-	int			i;
 
 	res = str;
 	founded = 0;
+	if (ch == 0)
+	{
+		while (res)
+			res++;
+		return ((char *)res);
+	}
 	while (res)
 	{
 		if (*res == ch)
