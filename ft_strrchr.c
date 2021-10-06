@@ -6,24 +6,24 @@
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:58:47 by lykalon           #+#    #+#             */
-/*   Updated: 2021/10/05 18:58:47 by lykalon          ###   ########.fr       */
+/*   Updated: 2021/10/06 17:35:10 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *str, int ch)
 {
-	const char	*res;
-	char		*founded;
+	char	*res;
+	char	*founded;
 
-	res = str;
+	res = (char *)str;
 	founded = 0;
 	if (ch == 0)
 	{
-		while (res)
+		while (*res)
 			res++;
-		return ((char *)res);
+		return (res);
 	}
-	while (res)
+	while (*res)
 	{
 		if (*res == ch)
 			founded = (char *)res;

@@ -6,7 +6,7 @@
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 21:52:06 by lykalon           #+#    #+#             */
-/*   Updated: 2021/10/05 22:39:28 by lykalon          ###   ########.fr       */
+/*   Updated: 2021/10/06 18:27:00 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	sign = 1;
+	result = 0;
 	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '-')
@@ -34,6 +35,8 @@ int	ft_atoi(const char *str)
 		sign = -1;
 		i++;
 	}
+	else if (str[i] == '+')
+		i++;
 	while ((str[i] >= 48) && (str[i] <= 57))
 	{
 		result = result * 10 + str[i] - 48;

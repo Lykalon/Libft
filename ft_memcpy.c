@@ -6,7 +6,7 @@
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 19:34:51 by lykalon           #+#    #+#             */
-/*   Updated: 2021/10/04 19:52:27 by lykalon          ###   ########.fr       */
+/*   Updated: 2021/10/06 16:19:00 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	d = dst;
 	s = src;
+	if ((dst == 0) && (src == 0))
+		return (dst);
 	while (i < n)
 	{
 		d[i] = s[i];

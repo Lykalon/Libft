@@ -6,7 +6,7 @@
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 16:04:15 by lykalon           #+#    #+#             */
-/*   Updated: 2021/10/04 21:07:44 by lykalon          ###   ########.fr       */
+/*   Updated: 2021/10/06 17:26:45 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	ft_isalnum(int ch)
 {
-	ch = ft_isalpha(ch);
-	ch = ft_isdigit(ch);
-	return (ch);
+	if (((ch >= 65) && (ch <= 90)) || ((ch >= 97) && (ch <= 122))
+		|| ((ch >= 48) && (ch <= 57)))
+		return (ch);
+	else
+		return (0);
 }
