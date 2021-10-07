@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,10 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int ch)
+#include "libft.h"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (((ch >= 65) && (ch <= 90)) || ((ch >= 97) && (ch <= 122)))
-		return (ch);
-	else
+	char	*res;
+	size_t	i;
+
+	i = 0;
+	if (s == 0)
 		return (0);
+	if (start >= ft_strlen(s))
+		len = 0;
+	res = (char *)malloc(sizeof(char) * (len + 1));
+	if (!res)
+		return (0);
+	ft_bzero(res, len + 1);
+	while (i < len)
+	{
+		res[i] = s[start + i];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }
