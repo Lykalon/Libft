@@ -28,6 +28,8 @@ static void	ft_isnegative(const char *str, int *i, int *sign)
 	}
 	else if (str[*i] == '+')
 		*i = *i + 1;
+	while (str[*i] == '0')
+		*i = *i + 1;
 }
 
 int	ft_atoi(const char *str)

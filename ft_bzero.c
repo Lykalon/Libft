@@ -19,10 +19,5 @@ void	ft_bzero(void *s, size_t n)
 
 	i = 0;
 	str = s;
-	while (n > 0)
-	{
-		str[i] = '\0';
-		i++;
-		n--;
-	}
+	ft_memset(str, 0, n);
 }

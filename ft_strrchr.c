@@ -14,10 +14,12 @@ char	*ft_strrchr(const char *str, int ch)
 {
 	char	*res;
 	char	*founded;
+	char	c;
 
 	res = (char *)str;
 	founded = 0;
-	if (ch == 0)
+	c = (char)ch;
+	if (c == 0)
 	{
 		while (*res)
 			res++;
@@ -25,7 +27,7 @@ char	*ft_strrchr(const char *str, int ch)
 	}
 	while (*res)
 	{
-		if (*res == ch)
+		if (*res == c)
 			founded = (char *)res;
 		res++;
 	}

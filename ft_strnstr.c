@@ -6,7 +6,7 @@
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:19:48 by lykalon           #+#    #+#             */
-/*   Updated: 2021/10/07 18:19:48 by lykalon          ###   ########.fr       */
+/*   Updated: 2021/10/11 18:17:15 by lykalon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (0);
 	if ((ft_strlen(needle) == 0) || (haystack == needle))
 		return ((char *)haystack);
+	if (!len)
+		return (0);
 	i = 0;
 	len_n = ft_strlen(needle);
 	res = 0;
-	while (len - len_n - i)
+	while (len - len_n - i + 1)
 	{
 		if (ft_strncmp(&haystack[i], needle, len_n) == 0)
 		{

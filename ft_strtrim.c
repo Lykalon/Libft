@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char		*res;
 	const char	*end;
 
-	if (s1 == 0)
+	if (!s1 || (*s1 == '\0'))
 	{
 		res = ft_calloc(1, sizeof(char));
 		return (res);
@@ -41,13 +41,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = s1;
 	while (*end)
 		end++;
-	if (s1 == end)
-		res = ft_calloc(1, sizeof(char));
-	else
+	if (end == s1)
 	{
-		while (ft_check_in_set(*(end - 1), set))
-			end--;
-		res = ft_substr(s1, 0, (end - s1));
+		res = ft_calloc(1, sizeof(char));
+		return (res);
 	}
+	while (ft_check_in_set(*(end - 1), set))
+		end--;
+	res = ft_substr(s1, 0, (end - s1));
 	return (res);
 }
