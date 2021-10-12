@@ -13,7 +13,8 @@ SRCS =	ft_isalpha.c ft_atoi.c ft_isdigit.c\
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 		ft_putnbr_fd.c
 #
-SRCS_B =
+SRCS_B =	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
+			ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c
 #
 HEADER = libft.h
 OBJ = $(patsubst %.c, %.o, $(SRCS))
@@ -33,7 +34,7 @@ $(NAME) : $(OBJ) $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 #
 bonus :
-	make OBJ
+	make OBJ="$(OBJ_B)" all
 #
 clean :
 	rm -f $(OBJ) $(OBJ_B)
