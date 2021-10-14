@@ -6,7 +6,7 @@
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 20:10:45 by lykalon           #+#    #+#             */
-/*   Updated: 2021/10/14 16:14:07 by lykalon          ###   ########.fr       */
+/*   Updated: 2021/10/14 16:22:28 by lykalon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*result;
 
 	if ((!lst) || (!f) || (!del))
-		return (lst);
+		return (0);
 	tmp = lst;
 	result = 0;
 	while (tmp)
