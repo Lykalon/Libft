@@ -6,7 +6,7 @@
 /*   By: lykalon <lykalon@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 19:44:06 by lykalon           #+#    #+#             */
-/*   Updated: 2021/10/13 19:58:08 by lykalon          ###   ########.fr       */
+/*   Updated: 2021/10/14 16:14:07 by lykalon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*tmp;
 	t_list	*to_free;
 
+	if (!lst)
+		return ;
 	if (!*lst)
 		return ;
+	if (!del)
+		del = free;
 	tmp = *lst;
 	while (tmp)
 	{
